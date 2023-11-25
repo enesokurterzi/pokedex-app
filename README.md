@@ -42,5 +42,16 @@ This project takes data from an api: https://pokeapi.co. You can see them in hom
 | ----------- | ---------------- | ---------------- |
 | ![Home](https://github.com/enesokurterzi/pokedex-app/assets/113862251/1ec8ab9a-4d11-40e3-940e-78340e30e6c2) | ![Home Screen](https://github.com/enesokurterzi/pokedex-app/assets/113862251/f68bdc50-9431-4050-98f7-31ba791e1d3a) | ![Home Screen](https://github.com/enesokurterzi/pokedex-app/assets/113862251/2005334d-7d53-4f55-ab69-0db55f383ddf)
 
-     
+
+## Video from the Project
+
+https://github.com/enesokurterzi/pokedex-app/assets/113862251/1f979748-e3ef-4e72-9e4f-284196a94150
+
+
+
+
+
+
+
+
      
