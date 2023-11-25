@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Primary -->
+    <color name="PrimaryColor">#DC0A2D</color>
+
+    <!-- Bug -->
+    <color name="bugColor">#A7B723</color>
+
+    <!-- Dark -->
+    <color name="darkColor">#75574C</color>
+
+    <!-- Dragon -->
+    <color name="dragonColor">#7037FF</color>
+
+    <!-- Electric -->
+    <color name="electricColor">#F9CF30</color>
+
+    <!-- Fairy -->
+    <color name="fairyColor">#E69EAC</color>
+
+    <!-- Fighting -->
+    <color name="fightingColor">#C12239</color>
+
+    <!-- Fire -->
+    <color name="fireColor">#F57D31</color>
+
+    <!-- Flying -->
+    <color name="flyingColor">#A891EC</color>
+
+    <!-- Ghost -->
+    <color name="ghostColor">#70559B</color>
+
+    <!-- Normal -->
+    <color name="normalColor">#AAA67F</color>
+
+    <!-- Grass -->
+    <color name="grassColor">#74CB48</color>
+
+    <!-- Ground -->
+    <color name="groundColor">#DEC16B</color>
+
+    <!-- Ice -->
+    <color name="iceColor">#9AD6DF</color>
+
+    <!-- Poison -->
+    <color name="poisonColor">#A43E9E</color>
+
+    <!-- Psychic -->
+    <color name="psychicColor">#FB5584</color>
+
+    <!-- Rock -->
+    <color name="rockColor">#B69E31</color>
+
+    <!-- Steel -->
+    <color name="steelColor">#B7B9D0</color>
+
+    <!-- Water -->
+    <color name="waterColor">#6493EB</color>
+
+    <!-- Dark -->
+    <color name="dark">#212121</color>
+
+    <!-- Medium -->
+    <color name="mediumColor">#666666</color>
+
+    <!-- Light -->
+    <color name="lightColor">#E0E0E0</color>
+
+    <!-- Background -->
+    <color name="backgroundColor">#EFEFEF</color>
+
+    <!-- White -->
+    <color name="whiteColor">#FFFFFF</color>
+</resources>

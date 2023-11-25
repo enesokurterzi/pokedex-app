@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/PrimaryColor"
+    tools:context=".presentation.view.home.HomeFragment" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="16dp"
+        android:paddingStart="16dp"
+        >
+
+        <ImageView
+            android:id="@+id/pokeballImageView"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/pokeball"
+            app:tint="@color/whiteColor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pokedex"
+            android:paddingStart="16dp"
+            style="@style/Headline"
+            android:textColor="@color/whiteColor"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp">
+
+        <SearchView
+            android:id="@+id/homePokemonSearch"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_search_view_and_image_button"
+            android:baselineAligned="false"
+            android:closeIcon="@drawable/close"
+            android:commitIcon="@drawable/search"
+            android:iconifiedByDefault="false"
+            android:queryBackground="@android:color/transparent"
+            android:queryHint="Search"
+            android:searchHintIcon="@drawable/search"
+            android:searchIcon="@drawable/search"
+            android:focusedByDefault="false"/>
+
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="wrap_content" />
+
+        <ImageButton
+            android:id="@+id/homeSortMenuButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_search_view_and_image_button"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/sort"
+            app:tint="@color/PrimaryColor" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pokemonListRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/bg_recycler_view_and_detail_bottom"/>
+
+
+</LinearLayout>

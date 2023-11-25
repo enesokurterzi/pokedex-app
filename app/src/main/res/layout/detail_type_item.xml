@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="pokemonType"
+            type="com.example.pokedexapp.domain.model.PokemonType" />
+    </data>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        style="@style/Subtitle3"
+        android:textColor="@color/whiteColor"
+        android:background="@drawable/bg_detail_type_item"
+        android:backgroundTint="@{pokemonType.typeColor}"
+        tools:backgroundTint="@color/mediumColor"
+        android:gravity="center"
+        android:text="@{pokemonType.typeName}"
+        tools:text="Type"/>
+
+</layout>
