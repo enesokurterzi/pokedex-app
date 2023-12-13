@@ -9,7 +9,6 @@ import com.example.pokedexapp.domain.repository.PokemonRepository
 import com.example.pokedexapp.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -34,7 +33,6 @@ class DetailViewModel @Inject constructor(
                 is Resource.Success -> {
                     withContext(Dispatchers.Main) {
                         pokemonDetail.value = result.data
-                        delay(500)
                         isLoading.value = false
                     }
                 }

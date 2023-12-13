@@ -1,8 +1,6 @@
 package com.example.pokedexapp.presentation.view.home
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
@@ -11,6 +9,7 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.SearchView.OnQueryTextListener
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
@@ -18,18 +17,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pokedexapp.R
 import com.example.pokedexapp.databinding.FragmentHomeBinding
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class HomeFragment @Inject constructor(
-    private val homeListAdapter: HomeListAdapter
+    val homeListAdapter: HomeListAdapter
 ) : Fragment(R.layout.fragment_home) {
 
     private var fragmentHomeBinding: FragmentHomeBinding? = null
-    private lateinit var homeViewModel: HomeViewModel
+    lateinit var homeViewModel: HomeViewModel
     private var popupWindow: PopupWindow? = null
     private var searchText = ""
 

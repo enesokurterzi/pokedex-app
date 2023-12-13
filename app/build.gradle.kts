@@ -18,7 +18,8 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+//        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.example.pokedexapp.HiltTestRunner"
     }
 
     buildTypes {
@@ -78,6 +79,32 @@ dependencies {
 
     // glide
     implementation("com.github.bumptech.glide:glide:4.15.1")
+
+    // TestImplementations
+    implementation("androidx.test:core:1.5.0")
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("org.hamcrest:hamcrest-all:1.3")
+    testImplementation("androidx.arch.core:core-testing:2.2.0")
+    testImplementation("org.robolectric:robolectric:4.8.1")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")
+    testImplementation("com.google.truth:truth:1.1.4")
+    testImplementation("org.mockito:mockito-core:4.7.0")
+
+    // Android Test Implementations
+    androidTestImplementation ("junit:junit:4.13.2")
+    androidTestImplementation ("org.mockito:mockito-android:4.7.0")
+    androidTestImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")
+    androidTestImplementation ("androidx.arch.core:core-testing:2.2.0")
+    androidTestImplementation ("com.google.truth:truth:1.1.4")
+    androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.1")
+    androidTestImplementation ("org.mockito:mockito-core:4.7.0")
+    androidTestImplementation ("com.google.dagger:hilt-android-testing:2.43.2")
+    kspAndroidTest ("com.google.dagger:hilt-android-compiler:2.48")
+    debugImplementation ("androidx.fragment:fragment-testing:1.7.0-alpha07")
+
+    androidTestImplementation("androidx.test.espresso:espresso-contrib:3.5.1") {
+        exclude(group = ("org.checkerframework"), module = ("checker"))
+    }
 
 }
 
