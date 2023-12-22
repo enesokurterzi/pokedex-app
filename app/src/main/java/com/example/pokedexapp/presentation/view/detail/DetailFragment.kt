@@ -23,6 +23,8 @@ class DetailFragment @Inject constructor(
     private val detailTypeAdapter: DetailTypeAdapter
 ) : Fragment(R.layout.fragment_detail) {
 
+    constructor() : this(DetailTypeAdapter())
+
     private var fragmentDetailBinding: FragmentDetailBinding? = null
     private lateinit var detailViewModel: DetailViewModel
     private var startX = 0f
@@ -203,14 +205,22 @@ class DetailFragment @Inject constructor(
     ) {
         if (offsetX > 200) {
             if (pokemonListPosition.toInt() == 0) {
-                Toast.makeText(requireContext(), "There is nothing to see there.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    requireContext(),
+                    "There is nothing to see there.",
+                    Toast.LENGTH_SHORT
+                ).show()
             } else {
                 navigateToSelf((pokemonListPosition.toInt() - 1).toString(), detailPokemonList)
             }
 
         } else if (offsetX < -200) {
             if (pokemonListPosition.toInt() == detailPokemonList.pokemonList.size - 1) {
-                Toast.makeText(requireContext(), "There is nothing to see there.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    requireContext(),
+                    "There is nothing to see there.",
+                    Toast.LENGTH_SHORT
+                ).show()
             } else {
                 navigateToSelf((pokemonListPosition.toInt() + 1).toString(), detailPokemonList)
             }

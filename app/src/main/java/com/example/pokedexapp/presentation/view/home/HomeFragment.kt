@@ -26,6 +26,8 @@ class HomeFragment @Inject constructor(
     val homeListAdapter: HomeListAdapter
 ) : Fragment(R.layout.fragment_home) {
 
+    constructor() : this(HomeListAdapter())
+
     private var fragmentHomeBinding: FragmentHomeBinding? = null
     lateinit var homeViewModel: HomeViewModel
     private var popupWindow: PopupWindow? = null
