@@ -16,7 +16,8 @@ class GetAllPokemonsUseCase @Inject constructor(
             )
         } catch (e: Exception) {
             e.printStackTrace()
-            Resource.Error(e.message ?: "An unknown error occurred.")
+//            Resource.Error(e.message ?: "An unknown error occurred.")
+            Resource.Error("Please check your internet connection.")
         }
     }
 }

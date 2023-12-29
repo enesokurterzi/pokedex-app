@@ -66,8 +66,30 @@ class HomeFragment @Inject constructor(
     }
 
     private fun subscribeToObservers() {
-        homeViewModel.shownList.observe(viewLifecycleOwner) {
-            homeListAdapter.pokemons = it ?: listOf()
+        homeViewModel.shownList.observe(viewLifecycleOwner) { pokemonList ->
+
+            pokemonList?.let {
+                fragmentHomeBinding?.pokemonListRecyclerView?.visibility = View.VISIBLE
+                homeListAdapter.pokemons = pokemonList
+            }
+
+        }
+
+        homeViewModel.pokemonError.observe(viewLifecycleOwner) { error ->
+
+            if (!error.isNullOrEmpty()) {
+                fragmentHomeBinding?.apply {
+                    pokemonListRecyclerView.visibility = View.GONE
+                    pokemonError.visibility = View.VISIBLE
+                    pokemonError.text = error
+                }
+            } else {
+                fragmentHomeBinding?.apply {
+                    pokemonListRecyclerView.visibility = View.VISIBLE
+                    pokemonError.visibility = View.GONE
+                }
+            }
+
         }
     }
 

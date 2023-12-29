@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/PrimaryColor"
-    tools:context=".presentation.view.home.HomeFragment" >
+    android:orientation="vertical"
+    tools:context=".presentation.view.home.HomeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingTop="16dp"
+        android:orientation="horizontal"
         android:paddingStart="16dp"
-        >
+        android:paddingTop="16dp">
 
         <ImageView
             android:id="@+id/pokeballImageView"
@@ -26,24 +24,23 @@
             app:tint="@color/whiteColor" />
 
         <TextView
+            style="@style/Headline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pokedex"
             android:paddingStart="16dp"
-            style="@style/Headline"
-            android:textColor="@color/whiteColor"
-            />
+            android:text="Pokedex"
+            android:textColor="@color/whiteColor" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:orientation="horizontal"
         android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingTop="8dp">
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp">
 
         <SearchView
             android:id="@+id/homePokemonSearch"
@@ -54,12 +51,12 @@
             android:baselineAligned="false"
             android:closeIcon="@drawable/close"
             android:commitIcon="@drawable/search"
+            android:focusedByDefault="false"
             android:iconifiedByDefault="false"
             android:queryBackground="@android:color/transparent"
             android:queryHint="Search"
             android:searchHintIcon="@drawable/search"
-            android:searchIcon="@drawable/search"
-            android:focusedByDefault="false"/>
+            android:searchIcon="@drawable/search" />
 
         <Space
             android:layout_width="16dp"
@@ -77,18 +74,36 @@
 
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/pokemonListRecyclerView"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:paddingTop="8dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="4dp"
-        android:background="@drawable/bg_recycler_view_and_detail_bottom"/>
+        android:background="@drawable/bg_recycler_view_and_detail_bottom"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="8dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pokemonListRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/pokemonError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/PrimaryColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Error Text" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </LinearLayout>

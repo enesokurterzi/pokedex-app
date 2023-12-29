@@ -17,6 +17,7 @@ class HomeViewModel @Inject constructor(
     private val pokemonRepository: PokemonRepository
 ) : ViewModel() {
     private val pokemonList = MutableLiveData<List<Pokemon>?>()
+    val pokemonError = MutableLiveData<String?>()
     val shownList = MutableLiveData<MutableList<Pokemon>?>()
     private var currentList: List<Pokemon>? = emptyList()
     val sortEvent: MutableLiveData<SortEvent> = MutableLiveData(SortEvent.ByID)
@@ -43,7 +44,9 @@ class HomeViewModel @Inject constructor(
                 }
 
                 is Resource.Error -> {
-
+                    withContext(Dispatchers.Main) {
+                        pokemonError.value = result.message
+                    }
                 }
             }
         }
@@ -52,11 +55,16 @@ class HomeViewModel @Inject constructor(
     fun searchPokemon(searchText: String) {
         val searchedList =
             pokemonList.value?.filter { it.id.contains(searchText) || it.name.contains(searchText) }
-        if (searchedList != null) {
+        if (!searchedList.isNullOrEmpty()) {
+            pokemonError.value = null
             currentList = searchedList
             endIndex = 0
             loadShownList()
             sortShownList()
+        } else {
+            if (pokemonError.value.isNullOrEmpty()) {
+                pokemonError.value = "There is no pokemon found."
+            }
         }
     }
 

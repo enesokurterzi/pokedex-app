@@ -34,7 +34,7 @@ class DetailViewModel @Inject constructor(
                 is Resource.Success -> {
                     withContext(Dispatchers.Main) {
                         pokemonDetail.value = result.data
-                        delay(100)
+                        delay(300)
                         isLoading.value = false
                     }
                 }
