@@ -1,31 +1,26 @@
 package com.example.pokedexapp.data.repository
 
-import com.example.pokedexapp.domain.model.Pokemon
-import com.example.pokedexapp.domain.model.PokemonAbout
-import com.example.pokedexapp.domain.model.PokemonDetail
+import com.example.pokedexapp.data.model.pokemon.PokemonDto
+import com.example.pokedexapp.data.model.pokemon_list.PokemonListDto
+import com.example.pokedexapp.data.model.pokemon_species.PokemonSpeciesDto
+import com.example.pokedexapp.data.remote.PokemonApi
 import com.example.pokedexapp.domain.repository.PokemonRepository
-import com.example.pokedexapp.domain.use_case.GetAllPokemonsUseCase
-import com.example.pokedexapp.domain.use_case.GetPokemonAboutByIDUseCase
-import com.example.pokedexapp.domain.use_case.GetPokemonByIDUseCase
-import com.example.pokedexapp.util.Resource
 import javax.inject.Inject
 
 class PokemonRepositoryImpl @Inject constructor(
-    private val getAllPokemonsUseCase: GetAllPokemonsUseCase,
-    private val getPokemonByIDUseCase: GetPokemonByIDUseCase,
-    private val getPokemonAboutByIDUseCase: GetPokemonAboutByIDUseCase
+    private val api: PokemonApi
 ) : PokemonRepository {
 
-    override suspend fun getAllPokemons(): Resource<List<Pokemon>> {
-        return getAllPokemonsUseCase.executeGetAllPokemons()
+    override suspend fun getAllPokemons(): PokemonListDto {
+        return api.getAllPokemons()
     }
 
-    override suspend fun getPokemonByID(pokemonID: String): Resource<PokemonDetail> {
-        return getPokemonByIDUseCase.executeGetPokemonByIDUseCase(pokemonID)
+    override suspend fun getPokemonByID(pokemonID: String): PokemonDto {
+        return api.getPokemonByID(pokemonID)
     }
 
-    override suspend fun getPokemonAboutByID(pokemonID: String): Resource<PokemonAbout> {
-        return getPokemonAboutByIDUseCase.executeGetPokemonAboutByIDUseCase(pokemonID)
+    override suspend fun getPokemonAboutByID(pokemonID: String): PokemonSpeciesDto {
+        return api.getPokemonAboutByID(pokemonID)
     }
 
 }

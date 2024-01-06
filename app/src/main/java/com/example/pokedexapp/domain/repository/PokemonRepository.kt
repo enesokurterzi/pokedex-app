@@ -1,16 +1,15 @@
 package com.example.pokedexapp.domain.repository
 
-import com.example.pokedexapp.domain.model.Pokemon
-import com.example.pokedexapp.domain.model.PokemonAbout
-import com.example.pokedexapp.domain.model.PokemonDetail
-import com.example.pokedexapp.util.Resource
+import com.example.pokedexapp.data.model.pokemon.PokemonDto
+import com.example.pokedexapp.data.model.pokemon_list.PokemonListDto
+import com.example.pokedexapp.data.model.pokemon_species.PokemonSpeciesDto
 
 interface PokemonRepository {
 
-    suspend fun getAllPokemons(): Resource<List<Pokemon>>
+    suspend fun getAllPokemons(): PokemonListDto
 
-    suspend fun getPokemonByID(pokemonID: String): Resource<PokemonDetail>
+    suspend fun getPokemonByID(pokemonID: String): PokemonDto
 
-    suspend fun getPokemonAboutByID(pokemonID: String): Resource<PokemonAbout>
+    suspend fun getPokemonAboutByID(pokemonID: String): PokemonSpeciesDto
 
 }

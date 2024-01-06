@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.pokedexapp.domain.model.Pokemon
-import com.example.pokedexapp.domain.repository.PokemonRepository
+import com.example.pokedexapp.domain.use_case.GetAllPokemonsUseCase
 import com.example.pokedexapp.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val pokemonRepository: PokemonRepository
+    private val getAllPokemonsUseCase: GetAllPokemonsUseCase
 ) : ViewModel() {
     private val pokemonList = MutableLiveData<List<Pokemon>?>()
     val pokemonError = MutableLiveData<String?>()
@@ -31,7 +31,7 @@ class HomeViewModel @Inject constructor(
 
     private fun loadAll() {
         viewModelScope.launch(Dispatchers.IO) {
-            when (val result = pokemonRepository.getAllPokemons()) {
+            when (val result = getAllPokemonsUseCase()) {
                 is Resource.Success -> {
                     withContext(Dispatchers.Main) {
                         pokemonList.value = result.data

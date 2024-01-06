@@ -1,10 +1,6 @@
 package com.example.pokedexapp.di
 
 import com.example.pokedexapp.data.remote.PokemonApi
-import com.example.pokedexapp.data.repository.PokemonRepositoryImpl
-import com.example.pokedexapp.domain.use_case.GetAllPokemonsUseCase
-import com.example.pokedexapp.domain.use_case.GetPokemonAboutByIDUseCase
-import com.example.pokedexapp.domain.use_case.GetPokemonByIDUseCase
 import com.example.pokedexapp.util.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -28,20 +24,5 @@ object AppModule {
             .build()
             .create()
     }
-
-    @Provides
-    @Singleton
-    fun providePokemonRepositoryImpl(
-        getAllPokemonsUseCase: GetAllPokemonsUseCase,
-        getPokemonByIDUseCase: GetPokemonByIDUseCase,
-        getPokemonAboutByIDUseCase: GetPokemonAboutByIDUseCase
-    ): PokemonRepositoryImpl {
-        return PokemonRepositoryImpl(
-            getAllPokemonsUseCase,
-            getPokemonByIDUseCase,
-            getPokemonAboutByIDUseCase
-        )
-    }
-
 
 }

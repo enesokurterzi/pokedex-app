@@ -5,7 +5,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.pokedexapp.domain.model.PokemonAbout
 import com.example.pokedexapp.domain.model.PokemonDetail
-import com.example.pokedexapp.domain.repository.PokemonRepository
+import com.example.pokedexapp.domain.use_case.GetPokemonAboutByIDUseCase
+import com.example.pokedexapp.domain.use_case.GetPokemonByIDUseCase
 import com.example.pokedexapp.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -16,7 +17,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class DetailViewModel @Inject constructor(
-    private val pokemonRepository: PokemonRepository
+    private val getPokemonByIDUseCase: GetPokemonByIDUseCase,
+    private val getPokemonAboutByIDUseCase: GetPokemonAboutByIDUseCase
 ) : ViewModel() {
     val pokemonDetail = MutableLiveData<PokemonDetail?>()
     val pokemonAbout = MutableLiveData<PokemonAbout?>()
@@ -30,7 +32,7 @@ class DetailViewModel @Inject constructor(
     private fun loadDetailData(pokemonID: String) {
         isLoading.value = true
         viewModelScope.launch(Dispatchers.IO) {
-            when (val result = pokemonRepository.getPokemonByID(pokemonID)) {
+            when (val result = getPokemonByIDUseCase(pokemonID)) {
                 is Resource.Success -> {
                     withContext(Dispatchers.Main) {
                         pokemonDetail.value = result.data
@@ -49,7 +51,7 @@ class DetailViewModel @Inject constructor(
 
     private fun loadAboutData(pokemonID: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            when (val result = pokemonRepository.getPokemonAboutByID(pokemonID)) {
+            when (val result = getPokemonAboutByIDUseCase(pokemonID)) {
                 is Resource.Success -> {
                     withContext(Dispatchers.Main) {
                         pokemonAbout.value = result.data

@@ -73,8 +73,8 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:2.7.6")
 
     // hilt
-    implementation("com.google.dagger:hilt-android:2.48")
-    ksp("com.google.dagger:hilt-compiler:2.48")
+    implementation("com.google.dagger:hilt-android:2.50")
+    ksp("com.google.dagger:hilt-compiler:2.50")
     ksp("androidx.hilt:hilt-compiler:1.1.0")
 
     // glide
@@ -103,7 +103,7 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation("org.mockito:mockito-core:4.7.0")
     androidTestImplementation("com.google.dagger:hilt-android-testing:2.43.2")
-    kspAndroidTest("com.google.dagger:hilt-android-compiler:2.48")
+    kspAndroidTest("com.google.dagger:hilt-android-compiler:2.50")
     debugImplementation("androidx.fragment:fragment-testing:1.7.0-alpha07")
 
     androidTestImplementation("androidx.test.espresso:espresso-contrib:3.5.1") {
