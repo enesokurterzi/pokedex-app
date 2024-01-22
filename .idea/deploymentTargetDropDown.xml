@@ -5,19 +5,13 @@
       <entry key="DetailFragmentTest">
         <State />
       </entry>
+      <entry key="HomeFragmentTest">
+        <State />
+      </entry>
       <entry key="app">
         <State />
       </entry>
-      <entry key="testNavigationFromDetailToRightDetail()">
-        <State />
-      </entry>
       <entry key="testNavigationFromHomeToDetail()">
-        <State />
-      </entry>
-      <entry key="testNavigationFromMostRightDetailToRightDetail()">
-        <State />
-      </entry>
-      <entry key="testNavigationSwipeToLeftForRight()">
         <State />
       </entry>
     </value>

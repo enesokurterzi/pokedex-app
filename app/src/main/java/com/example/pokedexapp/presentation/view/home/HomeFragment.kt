@@ -23,7 +23,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class HomeFragment @Inject constructor(
-    val homeListAdapter: HomeListAdapter
+    private val homeListAdapter: HomeListAdapter
 ) : Fragment(R.layout.fragment_home) {
 
     constructor() : this(HomeListAdapter())

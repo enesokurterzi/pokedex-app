@@ -5,13 +5,13 @@ import com.google.gson.annotations.SerializedName
 
 data class PokemonDto(
     @SerializedName("abilities")
-    val abilities: List<com.example.pokedexapp.data.model.pokemon.Ability>,
+    val abilities: List<Ability>,
     @SerializedName("base_experience")
     val baseExperience: Int,
     @SerializedName("forms")
-    val forms: List<com.example.pokedexapp.data.model.pokemon.Form>,
+    val forms: List<Form>,
     @SerializedName("game_indices")
-    val gameİndices: List<com.example.pokedexapp.data.model.pokemon.Gameİndice>,
+    val gameİndices: List<Gameİndice>,
     @SerializedName("height")
     val height: Int,
     @SerializedName("held_items")
@@ -23,7 +23,7 @@ data class PokemonDto(
     @SerializedName("location_area_encounters")
     val locationAreaEncounters: String,
     @SerializedName("moves")
-    val moves: List<com.example.pokedexapp.data.model.pokemon.Move>,
+    val moves: List<Move>,
     @SerializedName("name")
     val name: String,
     @SerializedName("order")
@@ -33,13 +33,13 @@ data class PokemonDto(
     @SerializedName("past_types")
     val pastTypes: List<Any>,
     @SerializedName("species")
-    val species: com.example.pokedexapp.data.model.pokemon.Species,
+    val species: Species,
     @SerializedName("sprites")
-    val sprites: com.example.pokedexapp.data.model.pokemon.Sprites,
+    val sprites: Sprites,
     @SerializedName("stats")
-    val stats: List<com.example.pokedexapp.data.model.pokemon.Stat>,
+    val stats: List<Stat>,
     @SerializedName("types")
-    val types: List<com.example.pokedexapp.data.model.pokemon.Type>,
+    val types: List<Type>,
     @SerializedName("weight")
     val weight: Int
 )

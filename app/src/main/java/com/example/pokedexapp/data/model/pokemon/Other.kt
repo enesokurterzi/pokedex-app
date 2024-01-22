@@ -5,9 +5,9 @@ import com.google.gson.annotations.SerializedName
 
 data class Other(
     @SerializedName("dream_world")
-    val dreamWorld: com.example.pokedexapp.data.model.pokemon.DreamWorld,
+    val dreamWorld: DreamWorld?,
     @SerializedName("home")
-    val home: com.example.pokedexapp.data.model.pokemon.Home,
+    val home: Home?,
     @SerializedName("official-artwork")
-    val officialArtwork: com.example.pokedexapp.data.model.pokemon.OfficialArtwork
+    val officialArtwork: OfficialArtwork
 )

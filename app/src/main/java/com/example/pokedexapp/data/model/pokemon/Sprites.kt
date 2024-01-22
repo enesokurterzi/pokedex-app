@@ -5,23 +5,23 @@ import com.google.gson.annotations.SerializedName
 
 data class Sprites(
     @SerializedName("back_default")
-    val backDefault: String,
+    val backDefault: String?,
     @SerializedName("back_female")
-    val backFemale: Any,
+    val backFemale: Any?,
     @SerializedName("back_shiny")
-    val backShiny: String,
+    val backShiny: String?,
     @SerializedName("back_shiny_female")
-    val backShinyFemale: Any,
+    val backShinyFemale: Any?,
     @SerializedName("front_default")
-    val frontDefault: String,
+    val frontDefault: String?,
     @SerializedName("front_female")
-    val frontFemale: Any,
+    val frontFemale: Any?,
     @SerializedName("front_shiny")
-    val frontShiny: String,
+    val frontShiny: String?,
     @SerializedName("front_shiny_female")
-    val frontShinyFemale: Any,
+    val frontShinyFemale: Any?,
     @SerializedName("other")
-    val other: com.example.pokedexapp.data.model.pokemon.Other,
+    val other: Other,
     @SerializedName("versions")
-    val versions: com.example.pokedexapp.data.model.pokemon.Versions
+    val versions: Versions?
 )

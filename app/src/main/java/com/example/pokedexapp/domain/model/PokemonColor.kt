@@ -1,6 +1,5 @@
 package com.example.pokedexapp.domain.model
 
-import android.util.Log
 import androidx.annotation.ColorRes
 import com.example.pokedexapp.R
 

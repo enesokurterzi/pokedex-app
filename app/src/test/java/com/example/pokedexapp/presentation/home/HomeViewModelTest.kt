@@ -4,12 +4,12 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.pokedexapp.MainDispatcherRule
 import com.example.pokedexapp.data.repository.FakePokemonRepositoryImpl
 import com.example.pokedexapp.domain.model.Pokemon
+import com.example.pokedexapp.domain.use_case.GetAllPokemonsUseCase
 import com.example.pokedexapp.getOrAwaitValueTest
 import com.example.pokedexapp.presentation.view.home.HomeViewModel
 import com.example.pokedexapp.presentation.view.home.SortEvent
 import com.google.common.truth.Truth
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Rule
@@ -28,7 +28,7 @@ class HomeViewModelTest {
 
     @Before
     fun setup() {
-        homeViewModel = HomeViewModel(FakePokemonRepositoryImpl())
+        homeViewModel = HomeViewModel(GetAllPokemonsUseCase(FakePokemonRepositoryImpl()))
         homeViewModel.shownList.getOrAwaitValueTest()
     }
 
@@ -104,7 +104,7 @@ class HomeViewModelTest {
                     id = "4",
                     name = "charmander",
                     imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png"
-                ) , Pokemon(
+                ), Pokemon(
                     id = "2",
                     name = "ivysaur",
                     imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png"

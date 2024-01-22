@@ -5,57 +5,57 @@ import com.google.gson.annotations.SerializedName
 
 data class PokemonSpeciesDto(
     @SerializedName("base_happiness")
-    val baseHappiness: Int,
+    val baseHappiness: Int?,
     @SerializedName("capture_rate")
-    val captureRate: Int,
+    val captureRate: Int?,
     @SerializedName("color")
-    val color: Color,
+    val color: Color?,
     @SerializedName("egg_groups")
-    val eggGroups: List<EggGroup>,
+    val eggGroups: List<EggGroup>?,
     @SerializedName("evolution_chain")
-    val evolutionChain: EvolutionChain,
+    val evolutionChain: EvolutionChain?,
     @SerializedName("evolves_from_species")
-    val evolvesFromSpecies: Any,
+    val evolvesFromSpecies: Any?,
     @SerializedName("flavor_text_entries")
     val flavorTextEntries: List<FlavorTextEntry>,
     @SerializedName("form_descriptions")
-    val formDescriptions: List<Any>,
+    val formDescriptions: List<Any>?,
     @SerializedName("forms_switchable")
-    val formsSwitchable: Boolean,
+    val formsSwitchable: Boolean?,
     @SerializedName("gender_rate")
-    val genderRate: Int,
+    val genderRate: Int?,
     @SerializedName("genera")
-    val genera: List<Genera>,
+    val genera: List<Genera>?,
     @SerializedName("generation")
-    val generation: Generation,
+    val generation: Generation?,
     @SerializedName("growth_rate")
-    val growthRate: GrowthRate,
+    val growthRate: GrowthRate?,
     @SerializedName("habitat")
-    val habitat: Habitat,
+    val habitat: Habitat?,
     @SerializedName("has_gender_differences")
-    val hasGenderDifferences: Boolean,
+    val hasGenderDifferences: Boolean?,
     @SerializedName("hatch_counter")
-    val hatchCounter: Int,
+    val hatchCounter: Int?,
     @SerializedName("id")
-    val id: Int,
+    val id: Int?,
     @SerializedName("is_baby")
-    val isBaby: Boolean,
+    val isBaby: Boolean?,
     @SerializedName("is_legendary")
-    val isLegendary: Boolean,
+    val isLegendary: Boolean?,
     @SerializedName("is_mythical")
-    val isMythical: Boolean,
+    val isMythical: Boolean?,
     @SerializedName("name")
-    val name: String,
+    val name: String?,
     @SerializedName("names")
-    val names: List<Name>,
+    val names: List<Name>?,
     @SerializedName("order")
-    val order: Int,
+    val order: Int?,
     @SerializedName("pal_park_encounters")
-    val palParkEncounters: List<PalParkEncounter>,
+    val palParkEncounters: List<PalParkEncounter>?,
     @SerializedName("pokedex_numbers")
-    val pokedexNumbers: List<PokedexNumber>,
+    val pokedexNumbers: List<PokedexNumber>?,
     @SerializedName("shape")
-    val shape: Shape,
+    val shape: Shape?,
     @SerializedName("varieties")
-    val varieties: List<Variety>
+    val varieties: List<Variety>?
 )
